@@ -12,10 +12,10 @@
 <?php if (count($children) > 0) : ?>
     <ul class="nav menu-subpages">
         <?php if ($parent && $depth >= 3) : ?>
-            <li class="nav-item menu-subpages__item"><a class="nav-link menu-subpages__link menu-subpages__link--parent" href="<?php echo get_page_link($parent); ?>" title="Subir ao nível anterior"><span class="visually-hidden">Subir ao n&iacute;vel anterior</span></a></li>
+            <li class="nav-item menu-subpages__item"><a class="nav-link menu-subpages__link menu-subpages__link--parent" href="<?php echo esc_url( get_page_link($parent) ); ?>" title="Subir ao nível anterior"><span class="visually-hidden">Subir ao n&iacute;vel anterior</span></a></li>
         <?php endif; ?>
         <?php foreach ($children as $child): ?>
-            <li class="nav-item menu-subpages__item"><a class="nav-link menu-subpages__link" href="<?php echo get_page_link($child->ID); ?>"><?php echo $child->post_title; ?></a></li>
+            <li class="nav-item menu-subpages__item"><a class="nav-link menu-subpages__link" href="<?php echo esc_url( get_page_link($child->ID) ); ?>"><?php echo esc_html( $child->post_title ); ?></a></li>
         <?php endforeach; ?>
     </ul>
 <?php else : ?>

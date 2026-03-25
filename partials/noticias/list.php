@@ -2,13 +2,13 @@
     <h2 class="lista-noticias__title">
     <?php
         if (is_home()) {
-            echo get_the_title(get_option( 'page_for_posts' ));
+            echo esc_html( get_the_title(get_option( 'page_for_posts' )) );
         } elseif (is_category()) {
-            echo single_cat_title(__('Not&iacute;cias da categoria&nbsp;', 'ifrs-portal-theme'), false);
+            echo esc_html( single_cat_title(__('Not&iacute;cias da categoria&nbsp;', 'ifrs-portal-theme'), false) );
         } elseif (is_tag()) {
-            echo single_tag_title(__('Not&iacute;cias com a tag&nbsp;', 'ifrs-portal-theme'), false);
+            echo esc_html( single_tag_title(__('Not&iacute;cias com a tag&nbsp;', 'ifrs-portal-theme'), false) );
         } elseif (is_tax('escopo')) {
-            echo single_term_title('Not&iacute;cias para ', false);
+            echo esc_html( single_term_title('Not&iacute;cias para ', false) );
         } else {
             echo __('Not&iacute;cias', 'ifrs-portal-theme');
         }

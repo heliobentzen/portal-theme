@@ -12,10 +12,10 @@
 <?php if ($children && count($children) > 0) : ?>
     <ol class="flex-column">
         <?php if ($parent && $depth >= 3) : ?>
-            <li class="nav-item"><a class="nav-link pl-1" href="<?php echo get_page_link($parent); ?>">Subir ao n&iacute;vel anterior</a></li>
+            <li class="nav-item"><a class="nav-link pl-1" href="<?php echo esc_url( get_page_link($parent) ); ?>">Subir ao n&iacute;vel anterior</a></li>
         <?php endif; ?>
         <?php foreach ($children as $child): ?>
-            <li class="nav-item"><a class="nav-link pl-1" href="<?php echo get_page_link($child->ID); ?>"><?php echo $child->post_title; ?></a></li>
+            <li class="nav-item"><a class="nav-link pl-1" href="<?php echo esc_url( get_page_link($child->ID) ); ?>"><?php echo esc_html( $child->post_title ); ?></a></li>
         <?php endforeach; ?>
     </ol>
 <?php else : ?>

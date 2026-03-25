@@ -13,8 +13,8 @@
     <div class="ultimos-posts">
         <h2 class="ultimos-posts__title">&Uacute;ltimas Not&iacute;cias</h2>
         <?php foreach ($last_posts as $post) : ?>
-            <h3 class="ultimos-posts__post-title"><a href="<?php echo get_permalink($post->ID); ?>" rel="bookmark"><?php echo $post->post_title; ?></a></h3>
-            <p class="ultimos-posts__post-date"><?php echo get_the_date('d/m/Y', $post->ID); ?></p>
+            <h3 class="ultimos-posts__post-title"><a href="<?php echo esc_url( get_permalink($post->ID) ); ?>" rel="bookmark"><?php echo esc_html( $post->post_title ); ?></a></h3>
+            <p class="ultimos-posts__post-date"><?php echo esc_html( get_the_date('d/m/Y', $post->ID) ); ?></p>
         <?php endforeach; ?>
     </div>
 <?php endif; ?>

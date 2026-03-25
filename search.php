@@ -2,7 +2,7 @@
 <?php if (!have_posts()) : ?>
     <div class="row">
         <div class="col-12">
-            <h2 class="search-results__title"><?php printf('Busca por &quot;%s&quot;', get_search_query()); ?></h2>
+            <h2 class="search-results__title"><?php printf('Busca por &quot;%s&quot;', esc_html( get_search_query() ) ); ?></h2>
         </div>
     </div>
     <div class="alert alert-warning">
@@ -11,7 +11,7 @@
 <?php else : ?>
     <div class="row">
         <div class="col-12">
-            <h2 class="search-results__title"><?php printf('Resultados da busca por &quot;%s&quot;', get_search_query()); ?></h2>
+            <h2 class="search-results__title"><?php printf('Resultados da busca por &quot;%s&quot;', esc_html( get_search_query() ) ); ?></h2>
         </div>
     </div>
     <?php while (have_posts()) : the_post(); ?>

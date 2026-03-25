@@ -13,6 +13,9 @@ add_shortcode( 'posts-by-category', function($atts, $link_text = '') {
         'posts-by-category'
     );
 
+    $atts['cat'] = absint( $atts['cat'] );
+    $atts['num'] = absint( $atts['num'] );
+
     if (empty($link_text)) {
         $link_text = __('Acesse mais notícias', 'ifrs-portal-theme');
     }
@@ -37,7 +40,7 @@ add_shortcode( 'posts-by-category', function($atts, $link_text = '') {
             <?php endwhile; ?>
             <?php wp_reset_query(); ?>
             </ul>
-            <a href="<?php echo get_category_link($atts['cat']) ?>"><strong><?php echo esc_html($link_text); ?></strong></a>
+            <a href="<?php echo esc_url( get_category_link($atts['cat']) ); ?>"><strong><?php echo esc_html($link_text); ?></strong></a>
         </div>
     </div>
 <?php

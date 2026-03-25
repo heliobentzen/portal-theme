@@ -1,6 +1,6 @@
 <?php
 add_filter( 'wp_kses_allowed_html', function( $allowedposttags ) {
-    if ( !current_user_can( 'administrator' ) ) {
+    if ( !current_user_can( 'unfiltered_html' ) ) {
         return $allowedposttags;
     }
 

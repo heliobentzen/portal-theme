@@ -5,9 +5,9 @@
 ?>
 <?php if (!empty($banner_enabled) && !empty($banner_img)) : ?>
   <?php if (!empty($banner_url)) : ?>
-    <a href="<?php echo $banner_url ?>">
+    <a href="<?php echo esc_url( $banner_url ); ?>">
   <?php endif; ?>
-      <?php echo $banner_img; ?>
+      <?php echo wp_kses_post( $banner_img ); ?>
   <?php if (!empty($banner_url)) : ?>
     </a>
   <?php endif; ?>
