@@ -22,7 +22,7 @@ add_shortcode( 'noticias-escopo', function($atts, $escopo = '') {
     ob_start();
 ?>
     <div class="lista-noticias">
-        <h2 class="lista-noticias__title">Not&iacute;cias para <?php echo $escopo->name; ?></h2>
+        <h2 class="lista-noticias__title">Not&iacute;cias para <?php echo esc_html( $escopo->name ); ?></h2>
         <div class="card-deck lista-noticias__content">
         <?php while ($noticias->have_posts()) : $noticias->the_post(); ?>
             <div class="card border-white">
@@ -34,10 +34,10 @@ add_shortcode( 'noticias-escopo', function($atts, $escopo = '') {
             </div>
         <?php endwhile; ?>
         </div>
-        <?php wp_reset_query(); ?>
+        <?php wp_reset_postdata(); ?>
         <div class="acesso-todas-noticias">
             <hr class="acesso-todas-noticias__separador">
-            <a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>" class="float-right acesso-todas-noticias__link"><?php _e('Acesse mais notícias', 'ifrs-portal-theme'); ?></a>
+            <a href="<?php echo esc_url( get_permalink( get_option( 'page_for_posts' ) ) ); ?>" class="float-right acesso-todas-noticias__link"><?php _e('Acesse mais notícias', 'ifrs-portal-theme'); ?></a>
         </div>
     </div>
 <?php

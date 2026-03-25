@@ -80,11 +80,11 @@
             <?php get_template_part('partials/noticias/item'); ?>
         </article>
     <?php endwhile; ?>
-    <?php wp_reset_query(); ?>
+    <?php wp_reset_postdata(); ?>
     <div class="col-12">
         <div class="acesso-todas-noticias">
             <hr class="acesso-todas-noticias__separador">
-            <a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>" class="float-right acesso-todas-noticias__link"><?php _e('Acesse mais notícias', 'ifrs-portal-theme'); ?></a>
+            <a href="<?php echo esc_url( get_permalink( get_option( 'page_for_posts' ) ) ); ?>" class="float-right acesso-todas-noticias__link"><?php _e('Acesse mais notícias', 'ifrs-portal-theme'); ?></a>
         </div>
     </div>
 </div>

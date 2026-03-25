@@ -9,7 +9,7 @@
                 $categories = get_the_category();
                 $cat_name = $categories[0]->cat_name;
             ?>
-            <p class="post__category"><?php echo $cat_name; ?></p>
+            <p class="post__category"><?php echo esc_html( $cat_name ); ?></p>
             <h2 class="post__title"><?php the_title(); ?></h2>
             <hr class="post__separator">
             <div class="row">
@@ -28,9 +28,14 @@
                 <?php if (has_post_thumbnail()) : ?>
                     <?php $caption = get_post(get_post_thumbnail_id())->post_excerpt; ?>
                     <div class="post__thumb<?php echo ($caption) ? ' wp-caption' : ''; ?>">
-                        <a href="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' )[0]; ?>"><?php the_post_thumbnail('full', array('class' => 'img-fluid')); ?></a>
+                        <?php
+                            $thumb_src = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' );
+                            if ( $thumb_src ) :
+                        ?>
+                        <a href="<?php echo esc_url( $thumb_src[0] ); ?>"><?php the_post_thumbnail('full', array('class' => 'img-fluid')); ?></a>
+                        <?php endif; ?>
                         <?php if ($caption) : ?>
-                            <p class="wp-caption-text"><?php echo $caption; ?></p>
+                            <p class="wp-caption-text"><?php echo esc_html( $caption ); ?></p>
                         <?php endif; ?>
                     </div>
                 <?php endif; ?>
@@ -41,7 +46,7 @@
                 <hr class="post__tags-separator">
                 <ul class="post__tags">
                     <?php foreach ($tags as $tag) : ?>
-                        <li class="post__tag"><a class="btn btn-outline-secondary btn-sm" href="<?php echo get_tag_link( $tag->term_id ); ?>"><?php echo $tag->name; ?></a></li>
+                        <li class="post__tag"><a class="btn btn-outline-secondary btn-sm" href="<?php echo esc_url( get_tag_link( $tag->term_id ) ); ?>"><?php echo esc_html( $tag->name ); ?></a></li>
                     <?php endforeach; ?>
                 </ul>
             <?php endif; ?>
