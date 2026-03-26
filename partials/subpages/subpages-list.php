@@ -1,21 +1,24 @@
 <?php
-    $children = get_pages(
+    $children = get_posts(
         array(
-            'sort_column' => 'menu_order',
-            'parent' => get_the_ID(),
+            'post_type'   => 'page',
+            'orderby'     => 'menu_order',
+            'order'       => 'ASC',
+            'post_parent' => get_the_ID(),
+            'numberposts' => -1,
         )
     );
     $parent = wp_get_post_parent_id( get_the_ID() );
-    $ancestors = get_post_ancestors($post->ID);
+    $ancestors = get_post_ancestors( get_the_ID() );
     $depth = count($ancestors);
 ?>
 <?php if ($children && count($children) > 0) : ?>
     <ol class="nav flex-column">
         <?php if ($parent && $depth >= 3) : ?>
-            <li class="nav-item"><a class="nav-link" href="<?php echo get_page_link($parent); ?>">Subir ao n&iacute;vel anterior</a></li>
+            <li class="nav-item"><a class="nav-link" href="<?php echo esc_url( get_permalink( $parent ) ); ?>">Subir ao n&iacute;vel anterior</a></li>
         <?php endif; ?>
         <?php foreach ($children as $child): ?>
-            <li class="nav-item"><a class="nav-link" href="<?php echo get_page_link($child->ID); ?>"><?php echo $child->post_title; ?></a></li>
+            <li class="nav-item"><a class="nav-link" href="<?php echo esc_url( get_permalink( $child->ID ) ); ?>"><?php echo esc_html( $child->post_title ); ?></a></li>
         <?php endforeach; ?>
     </ol>
 <?php else : ?>

@@ -35,9 +35,9 @@ add_shortcode( 'posts-by-category', function($atts, $link_text = '') {
             <?php while ($posts->have_posts()) : $posts->the_post(); ?>
                 <li class="posts-by-category__item"><a href="<?php the_permalink(); ?>" class="posts-by-category__link"><?php the_title(); ?></a></li>
             <?php endwhile; ?>
-            <?php wp_reset_query(); ?>
+            <?php wp_reset_postdata(); ?>
             </ul>
-            <a href="<?php echo get_category_link($atts['cat']) ?>"><strong><?php echo esc_html($link_text); ?></strong></a>
+            <a href="<?php echo esc_url( get_category_link( $atts['cat'] ) ); ?>"><strong><?php echo esc_html($link_text); ?></strong></a>
         </div>
     </div>
 <?php

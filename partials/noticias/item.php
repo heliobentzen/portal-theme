@@ -12,7 +12,7 @@
 <p class="noticia__meta">
 <?php if (!is_category() && !empty($categories)) : ?>
     <span class="noticia__cartola">
-        <a href="<?php echo get_category_link($categories[0]->term_id); ?>"><?php echo $categories[0]->cat_name; ?></a>
+        <a href="<?php echo esc_url( get_category_link( $categories[0]->term_id ) ); ?>"><?php echo esc_html( $categories[0]->cat_name ); ?></a>
     </span>
     -
 <?php endif; ?>

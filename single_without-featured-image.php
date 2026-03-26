@@ -15,7 +15,7 @@
                 $categories = get_the_category();
                 $cat_name = $categories[0]->cat_name;
             ?>
-            <p class="post__category"><?php echo $cat_name; ?></p>
+            <p class="post__category"><?php echo esc_html( $cat_name ); ?></p>
             <h2 class="post__title"><?php the_title(); ?></h2>
             <hr>
             <div class="row">
@@ -35,7 +35,7 @@
                 <hr class="post__tags-separator">
                 <ul class="post__tags">
                     <?php foreach ($tags as $tag) : ?>
-                        <li class="post__tag"><a class="btn btn-outline-secondary btn-sm" href="<?php echo get_tag_link( $tag->term_id ); ?>"><?php echo $tag->name; ?></a></li>
+                        <li class="post__tag"><a class="btn btn-outline-secondary btn-sm" href="<?php echo esc_url( get_tag_link( $tag->term_id ) ); ?>"><?php echo esc_html( $tag->name ); ?></a></li>
                     <?php endforeach; ?>
                 </ul>
             <?php endif; ?>
