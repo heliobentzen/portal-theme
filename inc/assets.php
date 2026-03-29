@@ -123,7 +123,7 @@ add_action('wp_enqueue_scripts', function() {
 }, 1);
 
 add_filter('script_loader_tag', function($tag, $handle) {
-    $scripts_to_defer = array('vlibras');
+    $scripts_to_defer = array('vlibras', 'commons', 'portal');
     $scripts_to_async = array('datatables');
 
     foreach ($scripts_to_defer as $defer_script) {

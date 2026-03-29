@@ -83,6 +83,9 @@ require_once('inc/disable-emoji.php');
 // Remove all "version" text from output
 require_once('inc/remove-version.php');
 
+// Cleanup unnecessary <head> items
+require_once('inc/cleanup-head.php');
+
 // Configurações Personalizadas
 require_once('inc/options.php');
 

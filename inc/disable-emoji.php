@@ -30,3 +30,15 @@ add_action('init', function() {
  * Remove Emoji prefetch
  */
 add_filter( 'emoji_svg_url', '__return_false' );
+
+/**
+ * Remove s.w.org dns-prefetch added by WordPress for the emoji CDN.
+ */
+add_filter( 'wp_resource_hints', function( $urls, $relation_type ) {
+    if ( 'dns-prefetch' === $relation_type ) {
+        $urls = array_filter( $urls, function( $url ) {
+            return ! is_string( $url ) || false === strpos( $url, 's.w.org' );
+        } );
+    }
+    return $urls;
+}, 10, 2 );
