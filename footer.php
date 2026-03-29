@@ -24,7 +24,7 @@
                             <img data-src="<?php echo esc_url(get_template_directory_uri()); ?>/img/creditos-wordpress.png" alt="Desenvolvido com Wordpress (abre uma nova p&aacute;gina)" class="lazyload" width="98" height="20"/>
                         </a>
                         <!-- Código-fonte -->
-                        <a href="https://github.com/IFRS/portal-theme/" target="_blank" rel="noopener" data-toggle="tooltip" data-placement="top" title="C&oacute;digo-fonte deste tema sob a licen&ccedil;a GPLv3">
+                        <a href="https://github.com/IFPE/portal-theme/" target="_blank" rel="noopener" data-toggle="tooltip" data-placement="top" title="C&oacute;digo-fonte deste tema sob a licen&ccedil;a GPLv3">
                             <img data-src="<?php echo esc_url(get_template_directory_uri()); ?>/img/creditos-git.png" alt="C&oacute;digo-fonte deste tema sob a licen&ccedil;a GPLv3 (abre uma nova p&aacute;gina)" class="lazyload" width="43" height="18"/>
                         </a>
                         <!-- Creative Commons -->

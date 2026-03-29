@@ -1,6 +1,6 @@
 <?php
 // Lazyload Images
-function ifrs_add_lazyload($content) {
+function ifpe_add_lazyload($content) {
     if (!empty($content)) {
         $content = mb_encode_numericentity(
             htmlspecialchars_decode(
@@ -55,9 +55,9 @@ function ifrs_add_lazyload($content) {
     return $content;
 }
 
-add_filter('the_content', 'ifrs_add_lazyload', 99);
-add_filter('post_thumbnail_html', 'ifrs_add_lazyload', 99);
-add_filter('get_avatar', 'ifrs_add_lazyload', 99);
+add_filter('the_content', 'ifpe_add_lazyload', 99);
+add_filter('post_thumbnail_html', 'ifpe_add_lazyload', 99);
+add_filter('get_avatar', 'ifpe_add_lazyload', 99);
 
 add_action( 'dynamic_sidebar_before', function() {
     ob_start();
@@ -66,7 +66,7 @@ add_action( 'dynamic_sidebar_before', function() {
 add_action( 'dynamic_sidebar_after', function() {
     $content = ob_get_clean();
 
-    echo ifrs_add_lazyload($content);
+    echo ifpe_add_lazyload($content);
 
     unset($content);
 }, 999 );

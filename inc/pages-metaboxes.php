@@ -9,7 +9,7 @@ add_action( 'rwmb_meta_boxes', function($metaboxes) {
 	 * Subpáginas
 	 */
     $metaboxes[] = array(
-        'title'      => __( 'Exibição de Subpáginas', 'ifrs-portal-theme' ),
+        'title'      => __( 'Exibição de Subpáginas', 'ifpe-portal-theme' ),
         'post_types' => 'page',
         'context'    => 'side',
         'priority'   => 'low',

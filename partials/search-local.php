@@ -5,12 +5,12 @@
 <form class="inline-form" method="get" action="." role="form">
     <div class="form-goup">
         <div class="input-group">
-            <label class="visually-hidden" for="search-<?php echo $context; ?>"><?php _e('Termo da busca', 'ifrs-portal-theme'); ?></label>
-            <input class="form-control" type="text" value="<?php echo (get_search_query() ? get_search_query() : ''); ?>" name="s" id="search-<?php echo $context; ?>" placeholder="<?php _e('Busca contextual...', 'ifrs-portal-theme'); ?>"/>
+            <label class="visually-hidden" for="search-<?php echo $context; ?>"><?php _e('Termo da busca', 'ifpe-portal-theme'); ?></label>
+            <input class="form-control" type="text" value="<?php echo (get_search_query() ? get_search_query() : ''); ?>" name="s" id="search-<?php echo $context; ?>" placeholder="<?php _e('Busca contextual...', 'ifpe-portal-theme'); ?>"/>
             <span class="input-group-append">
-                <button type="submit" class="btn btn-primary" title="<?php _e('Buscar no contexto', 'ifrs-portal-theme'); ?>">Ir</button>
+                <button type="submit" class="btn btn-primary" title="<?php _e('Buscar no contexto', 'ifpe-portal-theme'); ?>">Ir</button>
             </span>
         </div>
-        <p class="form-text"><?php _e('Retorna os resultados somente sobre a p&aacute;gina atual.', 'ifrs-portal-theme'); ?></p>
+        <p class="form-text"><?php _e('Retorna os resultados somente sobre a p&aacute;gina atual.', 'ifpe-portal-theme'); ?></p>
     </div>
 </form>

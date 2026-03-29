@@ -9,6 +9,6 @@ add_action('wp_head', function() {
             echo '<link rel="preload" href="' . esc_url( $logo_src[0] ) . '" as="image"/>';
         }
     } else {
-        echo '<link rel="preload" href="' . esc_url( get_stylesheet_directory_uri() ) . '/img/ifrs.png" as="image"/>';
+        echo '<link rel="preload" href="' . esc_url( get_stylesheet_directory_uri() ) . '/img/ifpe.png" as="image"/>';
     }
 }, 0);
