@@ -1,6 +1,6 @@
 <?php $id = uniqid('nav-campi-') ?>
 <button class="btn d-none menu-campi__toggle" type="button" data-toggle="collapse" data-target="#<?php echo $id; ?>" aria-expanded="false" aria-controls="<?php echo $id; ?>">
-    <?php _e('Campi do IFRS', 'ifrs-portal-theme'); ?>
+    <?php _e('Campi do IFPE', 'ifpe-portal-theme'); ?>
 </button>
 <?php
     wp_nav_menu(

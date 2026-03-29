@@ -13,7 +13,7 @@
         ?>
         <?php the_content(); ?>
     </div>
-    <p class="page__meta"><?php printf(__('Última atualização em %s', 'ifrs-portal-theme'), get_the_modified_date('d/m/Y')); ?></p>
+    <p class="page__meta"><?php printf(__('Última atualização em %s', 'ifpe-portal-theme'), get_the_modified_date('d/m/Y')); ?></p>
 </article>
 
 <?php get_footer(); ?>

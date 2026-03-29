@@ -37,7 +37,7 @@ add_shortcode( 'noticias-escopo', function($atts, $escopo = '') {
         <?php wp_reset_postdata(); ?>
         <div class="acesso-todas-noticias">
             <hr class="acesso-todas-noticias__separador">
-            <a href="<?php echo esc_url( get_permalink( get_option( 'page_for_posts' ) ) ); ?>" class="float-right acesso-todas-noticias__link"><?php _e('Acesse mais notícias', 'ifrs-portal-theme'); ?></a>
+            <a href="<?php echo esc_url( get_permalink( get_option( 'page_for_posts' ) ) ); ?>" class="float-right acesso-todas-noticias__link"><?php _e('Acesse mais notícias', 'ifpe-portal-theme'); ?></a>
         </div>
     </div>
 <?php

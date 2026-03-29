@@ -4,7 +4,7 @@
  * Código adaptado para as necessidades do projeto e atualizado para funcionar no Bootstrap 4.
  */
 
-function ifrs_bs4_fix_shortcodes($content){
+function ifpe_bs4_fix_shortcodes($content){
 	$array = array (
 		'<p>[' => '[',
 		']</p>' => ']',
@@ -15,7 +15,7 @@ function ifrs_bs4_fix_shortcodes($content){
 	return $content;
 }
 
-add_filter('the_content', 'ifrs_bs4_fix_shortcodes');
+add_filter('the_content', 'ifpe_bs4_fix_shortcodes');
 
 $shortcodes = array(
 	'alert',
@@ -46,11 +46,11 @@ $shortcodes = array(
 );
 
 foreach ( $shortcodes as $shortcode ) {
-	$function = 'ifrs_bs4_' . str_replace( '-', '_', $shortcode );
+	$function = 'ifpe_bs4_' . str_replace( '-', '_', $shortcode );
 	add_shortcode( $shortcode, $function );
 }
 
-function ifrs_bs4_alert( $atts, $content = null ) {
+function ifpe_bs4_alert( $atts, $content = null ) {
 	$atts = shortcode_atts( array(
 		"type"          => false,
 		"dismissable"   => false,
@@ -65,7 +65,7 @@ function ifrs_bs4_alert( $atts, $content = null ) {
 
 	$dismissable = ( $atts['dismissable'] ) ? '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' : '';
 
-	$data_props = ifrs_bs4_parse_data_attributes( $atts['data'] );
+	$data_props = ifpe_bs4_parse_data_attributes( $atts['data'] );
 
 	return sprintf(
 		'<div class="%s"%s>%s%s</div>',
@@ -76,7 +76,7 @@ function ifrs_bs4_alert( $atts, $content = null ) {
 	);
 }
 
-function ifrs_bs4_row( $atts, $content = null ) {
+function ifpe_bs4_row( $atts, $content = null ) {
 	$atts = shortcode_atts( array(
 		"xclass" => false,
 		"data"   => false
@@ -85,7 +85,7 @@ function ifrs_bs4_row( $atts, $content = null ) {
 	$class  = 'row';
 	$class .= ( $atts['xclass'] )   ? ' ' . $atts['xclass'] : '';
 
-	$data_props = ifrs_bs4_parse_data_attributes( $atts['data'] );
+	$data_props = ifpe_bs4_parse_data_attributes( $atts['data'] );
 
 	return sprintf(
 		'<div class="%s"%s>%s</div>',
@@ -95,7 +95,7 @@ function ifrs_bs4_row( $atts, $content = null ) {
 	);
 }
 
-function ifrs_bs4_column( $atts, $content = null ) {
+function ifpe_bs4_column( $atts, $content = null ) {
 	$atts = shortcode_atts( array(
 		"xl"          => false,
 		"lg"          => false,
@@ -122,7 +122,7 @@ function ifrs_bs4_column( $atts, $content = null ) {
 	$class .= ( $atts['offset_sm'] || $atts['offset_sm'] === "0" )      ? ' offset-sm-' . $atts['offset_sm'] : '';
 	$class .= ( $atts['xclass'] )                                       ? ' ' . $atts['xclass'] : '';
 
-	$data_props = ifrs_bs4_parse_data_attributes( $atts['data'] );
+	$data_props = ifpe_bs4_parse_data_attributes( $atts['data'] );
 
 	return sprintf(
 		'<div class="%s"%s>%s</div>',
@@ -132,7 +132,7 @@ function ifrs_bs4_column( $atts, $content = null ) {
 	);
 }
 
-function ifrs_bs4_list_group( $atts, $content = null ) {
+function ifpe_bs4_list_group( $atts, $content = null ) {
 	$atts = shortcode_atts( array(
 		"linked" => false,
 		"xclass" => false,
@@ -142,7 +142,7 @@ function ifrs_bs4_list_group( $atts, $content = null ) {
 	$class  = 'list-group';
 	$class .= ( $atts['xclass'] )   ? ' ' . $atts['xclass'] : '';
 
-	$data_props = ifrs_bs4_parse_data_attributes( $atts['data'] );
+	$data_props = ifpe_bs4_parse_data_attributes( $atts['data'] );
 
 	return sprintf(
 		'<%1$s class="%2$s"%3$s>%4$s</%1$s>',
@@ -153,7 +153,7 @@ function ifrs_bs4_list_group( $atts, $content = null ) {
 	);
 }
 
-function ifrs_bs4_list_group_item( $atts, $content = null ) {
+function ifpe_bs4_list_group_item( $atts, $content = null ) {
 	$atts = shortcode_atts( array(
 		"link"    => false,
 		"type"    => false,
@@ -168,7 +168,7 @@ function ifrs_bs4_list_group_item( $atts, $content = null ) {
 	$class .= ( $atts['active']   == 'true' )   ? ' active' : '';
 	$class .= ( $atts['xclass'] )   ? ' ' . $atts['xclass'] : '';
 
-	$data_props = ifrs_bs4_parse_data_attributes( $atts['data'] );
+	$data_props = ifpe_bs4_parse_data_attributes( $atts['data'] );
 
 	return sprintf(
 		'<%1$s %2$s %3$s class="%4$s"%5$s>%6$s</%1$s>',
@@ -181,7 +181,7 @@ function ifrs_bs4_list_group_item( $atts, $content = null ) {
 	);
 }
 
-function ifrs_bs4_list_group_item_heading( $atts, $content = null ) {
+function ifpe_bs4_list_group_item_heading( $atts, $content = null ) {
 	$atts = shortcode_atts( array(
 		"xclass" => false,
 		"data"   => false
@@ -190,7 +190,7 @@ function ifrs_bs4_list_group_item_heading( $atts, $content = null ) {
 	$class  = 'mb-1';
 	$class .= ( $atts['xclass'] )   ? ' ' . $atts['xclass'] : '';
 
-	$data_props = ifrs_bs4_parse_data_attributes( $atts['data'] );
+	$data_props = ifpe_bs4_parse_data_attributes( $atts['data'] );
 
 	return sprintf(
 		'<div class="d-flex w-100 justify-content-between"><h4 class="%s"%s>%s</h4></div>',
@@ -200,7 +200,7 @@ function ifrs_bs4_list_group_item_heading( $atts, $content = null ) {
 	);
 }
 
-function ifrs_bs4_list_group_item_text( $atts, $content = null ) {
+function ifpe_bs4_list_group_item_text( $atts, $content = null ) {
 
 	$atts = shortcode_atts( array(
 		"xclass" => false,
@@ -210,7 +210,7 @@ function ifrs_bs4_list_group_item_text( $atts, $content = null ) {
 	$class  = 'mb-1';
 	$class .= ( $atts['xclass'] )   ? ' ' . $atts['xclass'] : '';
 
-	$data_props = ifrs_bs4_parse_data_attributes( $atts['data'] );
+	$data_props = ifpe_bs4_parse_data_attributes( $atts['data'] );
 
 	return sprintf(
 		'<p class="%s"%s>%s</p>',
@@ -220,7 +220,7 @@ function ifrs_bs4_list_group_item_text( $atts, $content = null ) {
 	);
 }
 
-function ifrs_bs4_badge( $atts, $content = null ) {
+function ifpe_bs4_badge( $atts, $content = null ) {
 	$atts = shortcode_atts( array(
 		"pill"   => false,
 		"xclass"  => false,
@@ -231,7 +231,7 @@ function ifrs_bs4_badge( $atts, $content = null ) {
 	$class .= ( $atts['pill']   == 'true' )    ? ' badge-pill' : '';
 	$class .= ( $atts['xclass'] )   ? ' ' . $atts['xclass'] : '';
 
-	$data_props = ifrs_bs4_parse_data_attributes( $atts['data'] );
+	$data_props = ifpe_bs4_parse_data_attributes( $atts['data'] );
 
 	return sprintf(
 		'<span class="%s"%s>%s</span>',
@@ -241,7 +241,7 @@ function ifrs_bs4_badge( $atts, $content = null ) {
 	);
 }
 
-function ifrs_bs4_button( $atts, $content = null ) {
+function ifpe_bs4_button( $atts, $content = null ) {
 	$atts = shortcode_atts( array(
 		"type"     => false,
 		"size"     => false,
@@ -275,7 +275,7 @@ function ifrs_bs4_button( $atts, $content = null ) {
 	);
 }
 
-function ifrs_bs4_button_group( $atts, $content = null ) {
+function ifpe_bs4_button_group( $atts, $content = null ) {
 	$atts = shortcode_atts( array(
 			"size"      => false,
 			"vertical"  => false,
@@ -295,7 +295,7 @@ function ifrs_bs4_button_group( $atts, $content = null ) {
 	);
 }
 
-function ifrs_bs4_table_wrap( $atts, $content = null ) {
+function ifpe_bs4_table_wrap( $atts, $content = null ) {
 	$atts = shortcode_atts( array(
 		'bordered'   => false,
 		'striped'    => false,
@@ -318,12 +318,12 @@ function ifrs_bs4_table_wrap( $atts, $content = null ) {
 	$tag = array('table');
 	$content = do_shortcode($content);
 
-	$return .= ifrs_bs4_scrape_dom_element($tag, $content, $class, '', $atts['data']);
+	$return .= ifpe_bs4_scrape_dom_element($tag, $content, $class, '', $atts['data']);
 	$return = ( $atts['responsive'] ) ? '<div class="table-responsive">' . $return . '</div>' : $return;
 	return $return;
 }
 
-function ifrs_bs4_card( $atts, $content = null ) {
+function ifpe_bs4_card( $atts, $content = null ) {
 	$atts = shortcode_atts( array(
 		"header"  => false,
 		"footer"  => false,
@@ -334,7 +334,7 @@ function ifrs_bs4_card( $atts, $content = null ) {
 	$class  = 'card';
 	$class .= ( $atts['xclass'] )   ? ' ' . $atts['xclass'] : '';
 
-	$data_props = ifrs_bs4_parse_data_attributes( $atts['data'] );
+	$data_props = ifpe_bs4_parse_data_attributes( $atts['data'] );
 
 	$footer = ( $atts['footer'] ) ? '<div class="card-footer">' . $atts['footer'] . '</div>' : '';
 
@@ -358,7 +358,7 @@ function ifrs_bs4_card( $atts, $content = null ) {
 	);
 }
 
-function ifrs_bs4_tabs( $atts, $content = null ) {
+function ifpe_bs4_tabs( $atts, $content = null ) {
 	if ( isset( $GLOBALS['tabs_count'] ) )
 		$GLOBALS['tabs_count']++;
 	else
@@ -389,9 +389,9 @@ function ifrs_bs4_tabs( $atts, $content = null ) {
 	}
 
 
-	$data_props = ifrs_bs4_parse_data_attributes( $atts['data'] );
+	$data_props = ifpe_bs4_parse_data_attributes( $atts['data'] );
 
-	$atts_map = ifrs_bs4_attribute_map( $content );
+	$atts_map = ifpe_bs4_attribute_map( $content );
 
 	// Extract the tab titles for use in the tab widget.
 	if ( $atts_map ) {
@@ -439,7 +439,7 @@ function ifrs_bs4_tabs( $atts, $content = null ) {
 	return apply_filters('bs_tabs', $output);
 }
 
-function ifrs_bs4_tab( $atts, $content = null ) {
+function ifpe_bs4_tab( $atts, $content = null ) {
 	$atts = shortcode_atts( array(
 		'title'   => false,
 		'active'  => false,
@@ -468,7 +468,7 @@ function ifrs_bs4_tab( $atts, $content = null ) {
 		$id = $atts['link'];
 	}
 
-	$data_props = ifrs_bs4_parse_data_attributes( $atts['data'] );
+	$data_props = ifpe_bs4_parse_data_attributes( $atts['data'] );
 
 	return sprintf(
 		'<div id="%s" class="%s"%s>%s</div>',
@@ -479,7 +479,7 @@ function ifrs_bs4_tab( $atts, $content = null ) {
 	);
 }
 
-function ifrs_bs4_collapsibles( $atts, $content = null ) {
+function ifpe_bs4_collapsibles( $atts, $content = null ) {
 	if ( isset($GLOBALS['collapsibles_count']) )
 		$GLOBALS['collapsibles_count']++;
 	else
@@ -495,7 +495,7 @@ function ifrs_bs4_collapsibles( $atts, $content = null ) {
 
 	$id = 'custom-accordion-'. $GLOBALS['collapsibles_count'];
 
-	$data_props = ifrs_bs4_parse_data_attributes( $atts['data'] );
+	$data_props = ifpe_bs4_parse_data_attributes( $atts['data'] );
 
 	return sprintf(
 		'<div class="%s" id="%s"%s>%s</div>',
@@ -506,7 +506,7 @@ function ifrs_bs4_collapsibles( $atts, $content = null ) {
 	);
 }
 
-function ifrs_bs4_collapse( $atts, $content = null ) {
+function ifpe_bs4_collapse( $atts, $content = null ) {
 	if ( isset($GLOBALS['single_collapse_count']) )
 		$GLOBALS['single_collapse_count']++;
 	else
@@ -531,7 +531,7 @@ function ifrs_bs4_collapse( $atts, $content = null ) {
 	$parent = isset( $GLOBALS['collapsibles_count'] ) ? 'custom-accordion-' . $GLOBALS['collapsibles_count'] : 'single-collapse';
 	$current_collapse = $parent . '-' . $GLOBALS['single_collapse_count'];
 
-	$data_props = ifrs_bs4_parse_data_attributes( $atts['data'] );
+	$data_props = ifpe_bs4_parse_data_attributes( $atts['data'] );
 
 	return sprintf(
 		'<div class="%1$s"%2$s>
@@ -554,7 +554,7 @@ function ifrs_bs4_collapse( $atts, $content = null ) {
 	);
 }
 
-function ifrs_bs4_media( $atts, $content = null ) {
+function ifpe_bs4_media( $atts, $content = null ) {
 	$atts = shortcode_atts( array(
 		"xclass" => false,
 		"data"   => false
@@ -563,7 +563,7 @@ function ifrs_bs4_media( $atts, $content = null ) {
 	$class  = 'media';
 	$class .= ( $atts['xclass'] )   ? ' ' . $atts['xclass']: '';
 
-	$data_props = ifrs_bs4_parse_data_attributes( $atts['data'] );
+	$data_props = ifpe_bs4_parse_data_attributes( $atts['data'] );
 
 	return sprintf(
 		'<div class="%s"%s>%s</div>',
@@ -573,7 +573,7 @@ function ifrs_bs4_media( $atts, $content = null ) {
 	);
 }
 
-function ifrs_bs4_media_body( $atts, $content = null ) {
+function ifpe_bs4_media_body( $atts, $content = null ) {
 	$atts = shortcode_atts( array(
 		"title"  => false,
 		"xclass" => false,
@@ -583,7 +583,7 @@ function ifrs_bs4_media_body( $atts, $content = null ) {
 	$div_class  = 'media-body';
 	$div_class .= ( $atts['xclass'] )   ? ' ' . $atts['xclass'] : '';
 
-	$data_props = ifrs_bs4_parse_data_attributes( $atts['data'] );
+	$data_props = ifpe_bs4_parse_data_attributes( $atts['data'] );
 
 	return sprintf(
 		'<div class="%s"%s><h4 class="mt-0">%s</h4>%s</div>',
@@ -594,7 +594,7 @@ function ifrs_bs4_media_body( $atts, $content = null ) {
 	);
 }
 
-function ifrs_bs4_jumbotron( $atts, $content = null ) {
+function ifpe_bs4_jumbotron( $atts, $content = null ) {
 	$atts = shortcode_atts( array(
 		"title"  => false,
 		"xclass" => false,
@@ -604,7 +604,7 @@ function ifrs_bs4_jumbotron( $atts, $content = null ) {
 	$class  = 'jumbotron';
 	$class .= ( $atts['xclass'] )   ? ' ' . $atts['xclass'] : '';
 
-	$data_props = ifrs_bs4_parse_data_attributes( $atts['data'] );
+	$data_props = ifpe_bs4_parse_data_attributes( $atts['data'] );
 
 	return sprintf(
 		'<div class="%s"%s>%s%s</div>',
@@ -615,7 +615,7 @@ function ifrs_bs4_jumbotron( $atts, $content = null ) {
 	);
 }
 
-function ifrs_bs4_lead( $atts, $content = null ) {
+function ifpe_bs4_lead( $atts, $content = null ) {
 	$atts = shortcode_atts( array(
 		"xclass" => false,
 		"data"   => false
@@ -624,7 +624,7 @@ function ifrs_bs4_lead( $atts, $content = null ) {
 	$class  = 'lead';
 	$class .= ( $atts['xclass'] )   ? ' ' . $atts['xclass'] : '';
 
-	$data_props = ifrs_bs4_parse_data_attributes( $atts['data'] );
+	$data_props = ifpe_bs4_parse_data_attributes( $atts['data'] );
 
 	return sprintf(
 		'<p class="%s"%s>%s</p>',
@@ -634,7 +634,7 @@ function ifrs_bs4_lead( $atts, $content = null ) {
 	);
 }
 
-function ifrs_bs4_img( $atts, $content = null ) {
+function ifpe_bs4_img( $atts, $content = null ) {
 	$atts = shortcode_atts( array(
 		"type"       => false,
 		"responsive" => false,
@@ -650,12 +650,12 @@ function ifrs_bs4_img( $atts, $content = null ) {
 	$return = '';
 	$tag = array('img');
 	$content = do_shortcode($content);
-	$return .= ifrs_bs4_scrape_dom_element($tag, $content, $class, '', $atts['data']);
+	$return .= ifpe_bs4_scrape_dom_element($tag, $content, $class, '', $atts['data']);
 
 	return $return;
 }
 
-function ifrs_bs4_embed_responsive( $atts, $content = null ) {
+function ifpe_bs4_embed_responsive( $atts, $content = null ) {
 	$atts = shortcode_atts( array(
 		"ratio"      => false,
 		"xclass"     => false,
@@ -670,17 +670,17 @@ function ifrs_bs4_embed_responsive( $atts, $content = null ) {
 
 	$tag = array('iframe', 'embed', 'video', 'object');
 	$content = do_shortcode($content);
-	$data_props = ifrs_bs4_parse_data_attributes( $atts['data'] );
+	$data_props = ifpe_bs4_parse_data_attributes( $atts['data'] );
 
 	return sprintf(
 		'<div class="%s"%s>%s</div>',
 		esc_attr( trim($class) ),
 		( $data_props ) ? ' ' . $data_props : '',
-		ifrs_bs4_scrape_dom_element($tag, $content, $embed_class, '', '')
+		ifpe_bs4_scrape_dom_element($tag, $content, $embed_class, '', '')
 	);
 }
 
-function ifrs_bs4_modal( $atts, $content = null ) {
+function ifpe_bs4_modal( $atts, $content = null ) {
 	if ( isset($GLOBALS['modal_count']) )
 		$GLOBALS['modal_count']++;
 	else
@@ -704,7 +704,7 @@ function ifrs_bs4_modal( $atts, $content = null ) {
 
 	$id = 'custom-modal-' . $GLOBALS['modal_count'];
 
-	$data_props = ifrs_bs4_parse_data_attributes( $atts['data'] );
+	$data_props = ifpe_bs4_parse_data_attributes( $atts['data'] );
 
 	$modal_output = sprintf(
 		'<div class="%1$s" id="%2$s" tabindex="-1" role="dialog" aria-hidden="true">
@@ -741,7 +741,7 @@ function ifrs_bs4_modal( $atts, $content = null ) {
 	);
 }
 
-function ifrs_bs4_modal_footer( $atts, $content = null ) {
+function ifpe_bs4_modal_footer( $atts, $content = null ) {
 	$atts = shortcode_atts( array(
 		"xclass" => false,
 		"data"   => false,
@@ -750,7 +750,7 @@ function ifrs_bs4_modal_footer( $atts, $content = null ) {
 	$class  = 'modal-footer';
 	$class .= ( $atts['xclass'] ) ? ' ' . $atts['xclass'] : '';
 
-	$data_props = ifrs_bs4_parse_data_attributes( $atts['data'] );
+	$data_props = ifpe_bs4_parse_data_attributes( $atts['data'] );
 
 	return sprintf(
 		'</div><div class="%s"%s>%s',
@@ -760,7 +760,7 @@ function ifrs_bs4_modal_footer( $atts, $content = null ) {
 	);
 }
 
-function ifrs_bs4_attribute_map($str, $att = null) {
+function ifpe_bs4_attribute_map($str, $att = null) {
 	$res = array();
 	$return = array();
 	$reg = get_shortcode_regex();
@@ -774,7 +774,7 @@ function ifrs_bs4_attribute_map($str, $att = null) {
 	return $return;
 }
 
-function ifrs_bs4_parse_data_attributes( $data ) {
+function ifpe_bs4_parse_data_attributes( $data ) {
 	$data_props = '';
 
 	if ( $data ) {
@@ -791,7 +791,7 @@ function ifrs_bs4_parse_data_attributes( $data ) {
 	return $data_props;
 }
 
-function ifrs_bs4_scrape_dom_element( $tag, $content, $class, $title = '', $data = null ) {
+function ifpe_bs4_scrape_dom_element( $tag, $content, $class, $title = '', $data = null ) {
 	if (!empty($content)) {
 		$content = mb_encode_numericentity(
 				htmlspecialchars_decode(

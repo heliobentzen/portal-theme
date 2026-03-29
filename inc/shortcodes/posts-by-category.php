@@ -14,7 +14,7 @@ add_shortcode( 'posts-by-category', function($atts, $link_text = '') {
     );
 
     if (empty($link_text)) {
-        $link_text = __('Acesse mais notícias', 'ifrs-portal-theme');
+        $link_text = __('Acesse mais notícias', 'ifpe-portal-theme');
     }
 
 

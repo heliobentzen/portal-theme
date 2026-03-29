@@ -1,6 +1,6 @@
-# IFRS Portal Theme
+# IFPE Portal Theme
 
-Tema do [Wordpress](https://wordpress.org/) para o Portal Institucional do [Instituto Federal do Rio Grande do Sul](https://ifrs.edu.br/).
+Tema do [Wordpress](https://wordpress.org/) para o Portal Institucional do [Instituto Federal de Pernambuco](https://ifpe.edu.br/).
 
 ## Dependências
 
@@ -9,12 +9,12 @@ Esse tema depende obrigatoriamente dos plugins [Metabox](https://br.wordpress.or
 - [Editor Clássico](https://br.wordpress.org/plugins/classic-editor/): Plugin para desabilitar o Gutenberg, o novo editor de conteúdo do Worpress.
 - [Widgets Clássicos](https://br.wordpress.org/plugins/classic-widgets/): Plugin para desabilitar a nova forma de adição de widgets baseada no Gutenberg.
 - [Disable Comments](https://br.wordpress.org/plugins/disable-comments/): Plugin que desabilita a funcionalidade de comentários globalmente, já que este tema não suporta comentários.
-- [IFRS Portal Plugin Roles](https://github.com/IFRS/portal-plugin-roles): Plugin para criação de funções administrativas extras.
-- [IFRS Portal Plugin Cartola](https://github.com/IFRS/portal-plugin-cartola): Plugin para transformar as categorias dos posts (notícias) em Cartola.
-- [IFRS Portal Plugin Sitesort](https://github.com/IFRS/portal-plugin-sitesort): Plugin para ordenar a lista de sites em uma instalação multisite do Wordpress.
-- [IFRS Portal Plugin Concursos](https://github.com/IFRS/portal-plugin-concursos): Plugin para gerenciamento de Concursos.
-- [IFRS Portal Plugin Documentos](https://github.com/IFRS/portal-plugin-documentos): Plugin para gerenciamento de Documentos.
-- [IFRS Portal Plugin Editais](https://github.com/IFRS/portal-plugin-editais): Plugin para gerenciamento de Editais.
+- [IFPE Portal Plugin Roles](https://github.com/IFPE/portal-plugin-roles): Plugin para criação de funções administrativas extras.
+- [IFPE Portal Plugin Cartola](https://github.com/IFPE/portal-plugin-cartola): Plugin para transformar as categorias dos posts (notícias) em Cartola.
+- [IFPE Portal Plugin Sitesort](https://github.com/IFPE/portal-plugin-sitesort): Plugin para ordenar a lista de sites em uma instalação multisite do Wordpress.
+- [IFPE Portal Plugin Concursos](https://github.com/IFPE/portal-plugin-concursos): Plugin para gerenciamento de Concursos.
+- [IFPE Portal Plugin Documentos](https://github.com/IFPE/portal-plugin-documentos): Plugin para gerenciamento de Documentos.
+- [IFPE Portal Plugin Editais](https://github.com/IFPE/portal-plugin-editais): Plugin para gerenciamento de Editais.
 
 ## Utilização
 
@@ -42,12 +42,12 @@ Para produção:
 $ gulp build --production
 ```
 
-*Nesse caso, será criada a pasta `dist/ifrs-portal-theme` com o tema completo e pronto para ser utilizado em produção.*
+*Nesse caso, será criada a pasta `dist/ifpe-portal-theme` com o tema completo e pronto para ser utilizado em produção.*
 
 ## Temas Derivados
 
-- [Tema para os Campi](https://github.com/IFRS/portal-theme-campus)
-- [Tema para o Centro Tecnológico de Acessibilidade](https://github.com/IFRS/portal-theme-cta)
+- [Tema para os Campi](https://github.com/IFPE/portal-theme-campus)
+- [Tema para o Centro Tecnológico de Acessibilidade](https://github.com/IFPE/portal-theme-cta)
 
 ## Licença
 
