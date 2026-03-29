@@ -17,6 +17,9 @@ require_once('inc/feed-thumbnail.php');
 // Títulos personalizados
 require_once('inc/custom-title.php');
 
+// Meta descrição dinâmica
+require_once('inc/meta-description.php');
+
 // Limita o número de níveis na construção dos menus e de aninhamento das páginas
 require_once('inc/depth-limit.php');
 
