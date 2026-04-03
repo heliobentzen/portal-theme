@@ -20,6 +20,12 @@ require_once('inc/custom-title.php');
 // Meta descrição dinâmica
 require_once('inc/meta-description.php');
 
+// Open Graph e Twitter Card
+require_once('inc/open-graph.php');
+
+// Dados estruturados JSON-LD
+require_once('inc/structured-data.php');
+
 // Limita o número de níveis na construção dos menus e de aninhamento das páginas
 require_once('inc/depth-limit.php');
 
