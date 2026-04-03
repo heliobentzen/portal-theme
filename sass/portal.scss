@@ -5,7 +5,6 @@
 @import 'bootstrap/scss/reboot';
 @import 'bootstrap/scss/type';
 @import 'bootstrap/scss/images';
-@import 'bootstrap/scss/code';
 @import 'bootstrap/scss/grid';
 @import 'bootstrap/scss/tables';
 @import 'bootstrap/scss/forms';
@@ -13,7 +12,7 @@
 @import 'bootstrap/scss/transitions';
 // @import 'bootstrap/scss/dropdown';
 @import 'bootstrap/scss/button-group';
-@import 'bootstrap/scss/input-group';
+// input-group is included in bootstrap/scss/forms in Bootstrap 5
 // @import 'bootstrap/scss/custom-forms';
 @import 'bootstrap/scss/nav';
 // @import 'bootstrap/scss/navbar';
@@ -34,7 +33,7 @@
 // @import 'bootstrap/scss/carousel';
 // @import 'bootstrap/scss/spinners';
 @import 'bootstrap/scss/utilities';
-@import 'bootstrap/scss/print';
+// @import 'bootstrap/scss/print' - removed in Bootstrap 5
 
 @import 'base/image-rendering-fix';
 @import 'base/focus-fix';

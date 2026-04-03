@@ -2,6 +2,12 @@
   "name": "ifrs-portal-theme",
   "private": true,
   "type": "module",
+  "overrides": {
+    "elliptic": "^6.6.1",
+    "@gulp-sourcemaps/identity-map": {
+      "postcss": "^8.4.49"
+    }
+  },
   "devDependencies": {
     "@babel/core": "^7.13.10",
     "@babel/preset-env": "^7.13.10",
