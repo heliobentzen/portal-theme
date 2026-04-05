@@ -1,5 +1,5 @@
 <?php $id = uniqid('nav-campi-') ?>
-<button class="btn d-none menu-campi__toggle" type="button" data-toggle="collapse" data-target="#<?php echo $id; ?>" aria-expanded="false" aria-controls="<?php echo $id; ?>">
+<button class="btn d-none menu-campi__toggle" type="button" data-toggle="collapse" data-target="#<?php echo esc_attr($id); ?>" aria-expanded="false" aria-controls="<?php echo esc_attr($id); ?>">
     <?php _e('Campi do IFRS', 'ifrs-portal-theme'); ?>
 </button>
 <?php

@@ -31,9 +31,9 @@ function portal_pagination() {
         foreach ( $pages as $page ) {
             $page = str_replace('page-numbers', 'page-link', $page);
             if (strpos($page, 'current') !== false) {
-                echo '<li class="page-item active">'.$page.'</li>';
+                echo '<li class="page-item active">'.wp_kses_post($page).'</li>';
             } else {
-                echo '<li class="page-item">'.$page.'</li>';
+                echo '<li class="page-item">'.wp_kses_post($page).'</li>';
             }
         }
         echo '</ul>';

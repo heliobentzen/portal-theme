@@ -724,7 +724,7 @@ function ifrs_bs4_modal( $atts, $content = null ) {
 		esc_attr( $div_class ),
 		esc_attr( $id ),
 		esc_attr( $div_size ),
-		( $atts['title'] ) ? '<h4 class="modal-title">' . $atts['title'] . '</h4>' : '',
+		( $atts['title'] ) ? '<h4 class="modal-title">' . esc_html( $atts['title'] ) . '</h4>' : '',
 		do_shortcode( $content )
 	);
 

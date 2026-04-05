@@ -8,7 +8,7 @@
     <meta name="description" content="<?php echo esc_attr(portal_get_meta_description()); ?>">
     <meta name="keywords" content="<?php _e('ifrs, portal, site, institucional, faculdade, universidade, ensino, pesquisa, extensão, cursos', 'ifrs-portal-theme'); ?>">
 
-    <?php if (!has_site_icon()) echo get_template_part('partials/favicons'); ?>
+    <?php if (!has_site_icon()) get_template_part('partials/favicons'); ?>
 
     <!-- Contexto Barra Brasil -->
     <meta property="creator.productor" content="http://estruturaorganizacional.dados.gov.br/id/unidade-organizacional/100918">
@@ -41,7 +41,7 @@
             </div>
             <div class="row header__content">
                 <div class="col-12 col-lg-8 header__title">
-                    <?php echo get_template_part('partials/header-title'); ?>
+                    <?php get_template_part('partials/header-title'); ?>
                 </div>
                 <div class="col-12 col-lg-4">
                     <div class="header__aside">
