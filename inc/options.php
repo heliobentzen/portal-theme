@@ -11,11 +11,6 @@ if (is_super_admin()) {
 			'menu_title'      => esc_html__( 'Banner Especial', 'ifrs-portal-theme' ),
 			'parent_slug'     => 'themes.php',
 			'capability'      => 'manage_options',
-			// 'icon_url'        => 'dashicons-palmtree',
-			// 'position'        => 1,
-			// 'admin_menu_hook' => 'network_admin_menu',
-			// 'display_cb'      => false,
-			// 'save_button'     => esc_html__( 'Salvar', 'ifrs-portal-theme' ),
 		) );
 
 		$banner_especial->add_field( array(
@@ -61,11 +56,6 @@ if (is_super_admin()) {
 			'menu_title'      => esc_html__( 'Banner e-MEC', 'ifrs-portal-theme' ),
 			'parent_slug'     => 'themes.php',
 			'capability'      => 'manage_options',
-			// 'icon_url'        => 'dashicons-palmtree',
-			// 'position'        => 1,
-			// 'admin_menu_hook' => 'network_admin_menu',
-			// 'display_cb'      => false,
-			// 'save_button'     => esc_html__( 'Salvar', 'ifrs-portal-theme' ),
 		) );
 
 		$e_mec->add_field( array(

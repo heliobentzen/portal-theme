@@ -5,7 +5,6 @@ function portal_pagination() {
     $big = 999999999; // need an unlikely integer
 
     $args = array(
-        // 'base'               => '%_%',
         'base'               => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
         'format'             => '/page/%#%',
         'total'              => $wp_query->max_num_pages,

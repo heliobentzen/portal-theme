@@ -1,9 +1,6 @@
 <?php
 add_action('wp_enqueue_scripts', function() {
     /* Styles */
-    /* wp_register_style( $handle, $src, $deps, $ver, $media ); */
-    /* wp_enqueue_style( $handle[, $src, $deps, $ver, $media] ); */
-
     if (!is_admin()) {
         wp_dequeue_style( 'wp-block-library' );
         wp_deregister_style( 'wp-block-library' );
@@ -29,10 +26,6 @@ add_action('wp_enqueue_scripts', function() {
     wp_register_style('posts-by-category', get_template_directory_uri(). '/css/partial_posts-by-category.css', array('portal'), WP_DEBUG ? null : filemtime(get_template_directory() . '/css/partial_posts-by-category.css'), 'all');
 
     /* Scripts */
-    /* wp_register_script( $handle, $src, $deps, $ver, $in_footer ); */
-    /* wp_enqueue_script( $handle[, $src, $deps, $ver, $in_footer] ); */
-
-
     $has_commons = file_exists(get_template_directory().'/js/commons.js');
     $commons_deps = $has_commons ? array('commons') : array();
 
